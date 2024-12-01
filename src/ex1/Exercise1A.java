@@ -16,11 +16,6 @@ public class Exercise1A {
 
         var line = reader.readLine();
 
-//        var tokens = new StringTokenizer(line.trim());
-//
-//        leftList.add(Integer.valueOf(tokens.nextToken()));
-//        rightList.add(Integer.valueOf(tokens.nextToken()));
-
         while(line != null) {
             var tokens = new StringTokenizer(line.trim());
 
@@ -40,7 +35,7 @@ public class Exercise1A {
             distances.add(Math.abs(leftList.get(i) - rightList.get(i)));
         }
 
-        var sum = distances.stream().reduce(0, (a, b) -> a + b);
+        var sum = distances.stream().reduce(0, Integer::sum);
 
         System.out.println("Sum: " + sum);
     }
